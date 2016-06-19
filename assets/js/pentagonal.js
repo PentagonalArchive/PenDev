@@ -1,6 +1,6 @@
 (function ($) {
     /**
-     * Get Winwoinner Width
+     * Get Window innerWidth
      * @returns {Number}
      */
     function windowWidth() {
