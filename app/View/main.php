@@ -12,14 +12,13 @@ require 'header.php';
               <h1 class="typed text-lite">Home for our code &amp; provide you for online services.</h1>
               <h1>&nbsp;</h1>
               <p class="no-visible" id="button-explores">
-                  <a href="#explore" class="btn btn-default letter-spacing-1 btn-lg text-lite border-3">EXPLORE WHAT WE DO</a>
+                  <a href="#" class="btn btn-default letter-spacing-1 btn-lg text-lite border-3">EXPLORE WHAT WE DO</a>
               </p>
           </div>
         </div>
       </div>
       <!-- .absolute-full.z-index-0 -->
     </div>
-    <div id="explore"></div>
     <!-- #feature-home -->
 <?php
 require 'footer.php';
