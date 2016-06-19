@@ -1,0 +1,27 @@
+# ----------------------------------------------------------------------
+# Security Handle
+# ----------------------------------------------------------------------
+
+# prevent all accesed start with dot(.) to accesed by external
+<Files "^.+">
+    order allow,deny
+    deny from all
+</Files>
+
+# set default 403 forbidden into Current url
+# best for seo features
+ErrorDocument 403 /
+
+# ----------------------------------------------------------------------
+# Main Web Route
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # use main.php as indexing
+    RewriteRule ^(.*)$ main.php [QSA,L]
+    # handle index.html & main.php to solved as main.php
+    RewriteRule ^(index\.s?html?|main\.php)?$ main.php [QSA,L]
+</IfModule>

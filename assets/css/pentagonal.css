@@ -1,0 +1,517 @@
+/*!
+ * Pentagonal Layout
+ */
+body {
+    font-family: "Lato","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Button
+ ---------------------------- */
+
+/* sizing */
+.form-control,
+.input-group-addon,
+.btn,
+.btn .badge,
+.btn-group > .btn .badge,
+.btn-group > .btn,
+.form-group .form-control,
+.pagination > li > a,
+.pagination > li > span,
+.input-group-addon.input,
+.input-group > .form-control,
+.input-group > .input-group-addon,
+.input-group > .input-group-btn > .btn {
+    padding: 6px 13px;
+}
+.btn-sm,
+.btn-group-sm > .btn,
+.input-sm,
+.btn-sm .badge,
+.btn-group-sm > .btn .badge,
+.form-group-sm .form-control,
+.pagination-sm > li > a,
+.pagination-sm > li > span,
+.input-group-addon.input-sm,
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+    padding: 5px 11px;
+}
+.btn-lg,
+.btn-lg .badge,
+.btn-group-lg > .btn .badge,
+.btn-group-lg > .btn,
+.input-lg,
+.form-group-lg .form-control,
+.pagination-lg > li > a,
+.pagination-lg > li > span,
+.input-group-addon.input-lg,
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+    padding: 10px 18px;
+}
+.btn-xs,
+.btn-xs .badge,
+.btn-group-xs > .btn .badge,
+.btn-group-xs > .btn,
+.input-xs,
+.form-group-xs .form-control,
+.pagination-xs > li > a,
+.pagination-xs > li > span,
+.input-group-addon.input-xs,
+.input-group-xs > .form-control,
+.input-group-xs > .input-group-addon,
+.input-group-xs > .input-group-btn > .btn {
+    padding: 2px 6px;
+}
+
+/* override & sizing */
+.btn {
+    background: none;
+    background-color: transparent;
+    border: 3px solid;
+    font-size: 16px;
+}
+.btn-lg {
+    font-size: 21px;
+    border: 4px solid;
+}
+.btn-sm,
+.btn-xs {
+    font-size: 12px;
+    border: 2px solid;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: 0 !important;
+}
+
+/* default */
+.btn-default {
+    background: none;
+    background-color: transparent;
+    color: #ccc;
+    border-color: #ccc;
+}
+.btn-default:hover {
+    background: none;
+    background-color: transparent;
+    color: #adadad;
+    border-color: #adadad;
+}
+.btn-default:focus,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.btn-default.focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.btn-default[disabled],
+.btn-default[disabled]:hover,
+.btn-default[disabled]:focus,
+.btn-default.disabled,
+.btn-default.disabled:hover,
+.btn-default.disabled:focus {
+    background: none;
+    background-color: transparent;
+    color: #8c8c8c;
+    border-color: #8c8c8c;
+}
+
+/* primary */
+.btn-primary {
+    background: none;
+    background-color: transparent;
+    color: #2e6da4;
+    border-color: #2e6da4;
+}
+.btn-primary:hover {
+    background: none;
+    background-color: transparent;
+    color: #204d74;
+    border-color: #204d74;
+}
+.btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.btn-primary.focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.btn-primary[disabled],
+.btn-primary[disabled]:hover,
+.btn-primary[disabled]:focus,
+.btn-primary.disabled,
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus {
+    color: #122b40;
+    border-color: #122b40;
+}
+
+/* success */
+.btn-success {
+    background: none;
+    background-color: transparent;
+    color: #4cae4c;
+    border-color: #4cae4c;
+}
+.btn-success:hover {
+    background: none;
+    background-color: transparent;
+    color: #255625;
+    border-color: #255625;
+}
+.btn-success:focus,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.btn-success.focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.btn-success[disabled],
+.btn-success[disabled]:hover,
+.btn-success[disabled]:focus,
+.btn-success.disabled,
+.btn-success.disabled:hover,
+.btn-success.disabled:focus {
+    color: #398439;
+    border-color: #398439;
+}
+
+/* info */
+.btn-info {
+    background: none;
+    background-color: transparent;
+    color: #46b8da;
+    border-color: #46b8da;
+}
+.btn-info:hover {
+    background: none;
+    background-color: transparent;
+    color: #269abc;
+    border-color: #269abc;
+}
+.btn-info:focus,
+.btn-info:active:focus,
+.btn-info.active:focus,
+.btn-info.focus,
+.btn-info:active.focus,
+.btn-info.active.focus,
+.btn-info[disabled],
+.btn-info[disabled]:hover,
+.btn-info[disabled]:focus,
+.btn-info.disabled,
+.btn-info.disabled:hover,
+.btn-info.disabled:focus {
+    background: none;
+    background-color: transparent;
+    color: #1b6d85;
+    border-color: #1b6d85;
+}
+
+/* warning */
+.btn-warning {
+    background: none;
+    background-color: transparent;
+    color: #eea236;
+    border-color: #eea236;
+}
+.btn-warning:hover {
+    background: none;
+    background-color: transparent;
+    color: #d58512;
+    border-color: #d58512;
+}
+.btn-warning:focus,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.btn-warning.focus,
+.btn-warning:active.focus,
+.btn-warning.active.focus,
+.btn-warning[disabled],
+.btn-warning[disabled]:hover,
+.btn-warning[disabled]:focus,
+.btn-warning.disabled,
+.btn-warning.disabled:hover,
+.btn-warning.disabled:focus {
+    background: none;
+    background-color: transparent;
+    color: #985f0d;
+    border-color: #985f0d;
+}
+
+/* warning */
+.btn-danger {
+    background: none;
+    background-color: transparent;
+    color: #d43f3a;
+    border-color: #d43f3a;
+}
+.btn-danger:hover {
+    background: none;
+    background-color: transparent;
+    color: #ac2925;
+    border-color: #ac2925;
+}
+.btn-danger:focus,
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.btn-danger.focus,
+.btn-danger:active.focus,
+.btn-danger.active.focus,
+.btn-danger[disabled],
+.btn-danger[disabled]:hover,
+.btn-danger[disabled]:focus,
+.btn-danger.disabled,
+.btn-danger.disabled:hover,
+.btn-danger.disabled:focus {
+    background: none;
+    background-color: transparent;
+    color: #761c19;
+    border-color: #761c19;
+}
+
+
+/* Positioning
+ ---------------------------- */
+.relative {
+    position: relative;
+}
+.fixed {
+    position: fixed;
+}
+.absolute {
+    position: absolute;
+}
+.absolute-full {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    height:100vh;
+    width: 100vw;
+}
+.absolute-bottom {
+    position: absolute;
+    bottom:0;
+}
+.absolute-width {
+    position: absolute;
+    left:0;
+    right: 0;
+    width: 100vw;
+}
+.absolute-height {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    height:100vh;
+}
+.bottom-25 {
+    bottom: 25vh;
+}
+.bottom-50 {
+    bottom: 50vh;
+}
+.z-index-0 {
+    z-index: 0;
+}
+.z-index-1 {
+    z-index: 1;
+}
+.z-index-2 {
+    z-index: 2;
+}
+.full-screen {
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 320px;
+    min-height: 320px;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Text Sizes & misc
+ ---------------------------- */
+.text-lite {
+    font-weight: 300;
+}
+.text-normal {
+    font-weight: 400;
+}
+.text-bold {
+    font-weight: 700;
+}
+.transparent-9 {
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+.transparent-8 {
+    opacity: .8;
+    filter: alpha(opacity=80);
+}
+.transparent-7 {
+    opacity: .7;
+    filter: alpha(opacity=70);
+}
+.transparent-6 {
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.transparent-5 {
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+.transparent-4 {
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.transparent-3 {
+    opacity: .3;
+    filter: alpha(opacity=30);
+}
+.transparent-2 {
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
+.transparent-1 {
+    opacity: .1;
+    filter: alpha(opacity=10);
+}
+.transparent {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+.letter-spacing-3 {
+    letter-spacing: 3px;
+}
+.border-5 {
+    border-width: 5px;
+}
+.border-4 {
+    border-width: 4px;
+}
+.border-3 {
+    border-width: 3px;
+}
+.border-2 {
+    border-width: 2px;
+}
+.border-1 {
+    border-width: 1px;
+}
+.border-0 {
+    border-width: 0px;
+}
+/* Coloring
+ ---------------------------- */
+.text-black {
+    color: #000;
+}
+.bg-black {
+    background-color: #000;
+}
+.text-white {
+    color: #fff;
+}
+.bg-white {
+    background-color: #fff;
+}
+.text-darkcyan {
+    color: #008b8b;
+}
+.bg-darkcyan {
+    background-color: #008b8b;
+}
+.text-cyan {
+    color: #00ffff;
+}
+.bg-cyan {
+    background-color: #00ffff;
+}
+.text-crimson {
+    color: #dc143c;
+}
+.bg-crimson {
+    background-color: #dc143c;
+}
+.text-azure {
+    color:#f0ffff;
+}
+.bg-azure {
+    background-color:#f0ffff;
+}
+.text-aliceblue {
+    color: #f0f8ff;
+}
+.bg-aliceblue {
+    background-color: #f0f8ff;
+}
+.text-aqua {
+    color: #00ffff;
+}
+.bg-aqua {
+    background-color: #00ffff;
+}
+
+/* Type Animation & Selector
+ ---------------------------- */
+#button-explores > .btn {
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    -ms-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    transition: all ease 1s;
+    opacity: 0;
+    top: -1em;
+    position: relative;
+}
+#button-explores.show > .btn {
+    opacity: 1;
+    top: 0;
+}
+.no-visible,
+.typed {
+    visibility: hidden;
+}
+.no-visible.show,
+.typed.show {
+    visibility: visible;
+}
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+/* Home
+ ---------------------------- */
+
+/* 404
+ ---------------------------- */
+h1.big-text {
+    position: relative;
+    top: 20vh;
+    font-size: 40vh;
+}
+h1.big-text + h3 {
+    position: relative;
+    top:22vh;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}

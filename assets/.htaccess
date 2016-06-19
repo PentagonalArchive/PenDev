@@ -1,0 +1,19 @@
+# Deny First
+Deny from all
+
+# Does not allow access executable files
+# Allow only if not an executable / static resource
+# that allow to be access
+# note :
+# ?i: = hat means incase sensitive
+# (?!( =  start except of current regex
+# Below setting is affected to :
+# .php(or anything on next), .inc, cgi(or anything on next)|any .(s?)html(s?) / .phtml(s?) file
+# .log / .logs| .exe(c?) | .sh(ell)? | .msi | .(s?)bin | .cmd | .ini
+# if you want allow html executed on site
+# `s?p?s?html?` = change to `phtmls?` phtml is an php + html file
+# it will be allow html, shtml, htm will be execute
+
+<Files ~ "\.(?i:(?!(php(.+)?|inc|cgi(.+)?|s?p?s?html?s?|logs?|exec?|msi|sh(ell)?|s?bin|cmd|ini|p?env)))">
+    Allow From All
+</Files>
