@@ -167,8 +167,7 @@
         constellate($('canvas.node-pointer'));
         $('a[href^=#]').on('click', function (e) {
             var _href = this.href.replace(/.+\#(.*)/, '$1');
-                console.log($('#'+_href));
-            if (! _href.match(/[a-z0-9\-\_]/i) && $('#'+ _href).length) {
+            if (! _href.match(/[^a-z0-9\-\_]/i) && $('#'+ _href).length) {
                 e.preventDefault();
                 $('html, body').animate({scrollTop: $('#'+_href).offset().top});
                 return false;
