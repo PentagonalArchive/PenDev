@@ -252,5 +252,67 @@
             }
         }
 
+        /**
+         * Validate Email
+         * @return {String|Bool} email valid
+         */
+        function validateEmailSubscribe()
+        {
+            var _email = $('#email');
+            if (_email.length && _email.val().length) {
+                var _value = _email.val();
+                if (domainverifier.isEmail(_value)) {
+                    _email.parent('div').removeClass('has-error').addClass('has-success');
+                    $('#submit-subscribe').attr('class', function (i,c) {
+                        return c.replace(/btn\-[a-z0-9\_\-]+/g, '')
+                    });
+                    $('#submit-subscribe').addClass('btn-success').attr('disabled', false);
+                    return domainverifier.email(_value);
+                } else {
+                    $('#submit-subscribe').attr('class', function (i,c) {
+                        return c.replace(/\sbtn\-[a-z0-9\_\-]+/g, '')
+                    });
+                    $('#submit-subscribe').addClass('btn-danger').attr('disabled', true);
+                    _email.parent('div').removeClass('has-success').addClass('has-error');
+                    return false;
+                }
+            }
+        }
+        $('#email').on('keyup', function(e) {
+            validateEmailSubscribe();
+        });
+        $('#submit-subscribe').on('click', function (e) {
+            if ((_email = validateEmailSubscribe()) !== false) {
+                if ($('#form-subscribe-form .alert').length) {
+                    $('#form-subscribe-form .alert').remove();
+                }
+                var _this  = $(this);
+                _this.attr('disabled', true);
+                $.ajax({
+                    url: subscribe_url,
+                    data: {
+                        email: _email
+                    },
+                    type: 'json',
+                    method: 'POST',
+                    success: function(response, status, xhr) {
+                        _this.attr('disabled', false);
+                        if (response.status == 'ok') {
+                            $('#form-subscribe-form').html('<div class="alert alert-success text-center">'+response.message+'</div>');
+                        } else if (response.status == 'conflict') {
+                            $('#form-subscribe-form').html('<div class="alert alert-danger text-center">'+response.message+'</div>');
+                        } else {
+                            $('#form-subscribe-form').prepend('<div class="alert alert-danger text-center">'+response.message+'</div>');
+                        }
+                    },
+                    error: function(xhr) {
+                        $('#form-subscribe-form').prepend('<div class="alert alert-danger text-center">There was an error. Please try again.</div>');
+                        _this.attr('disabled', false);
+                    }
+                });
+            } else {
+                $('#email').focus();
+            }
+        })
     }); /** end ready */
 })(window.jQuery);

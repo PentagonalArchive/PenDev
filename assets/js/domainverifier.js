@@ -89,6 +89,10 @@ domainverifier.prototype = {
         ) {
             return false;
         }
+        console.log(result.domain);
+        if (result.domain == 'example' && result.extension == 'com') {
+            return false;
+        }
         /**
          * if array of Domain split more than 2 ,
          * that means the domain name has sub domain
@@ -146,7 +150,7 @@ domainverifier.prototype = {
             /**
              * validate if Domain valid
              */
-            || !isDomainValid(_domain)
+            || !this.isDomain(_domain)
             /**
              * for standard usage email address only contains:
              * alphabetical & underscore (_) dash (-) and dotted (.)
@@ -159,7 +163,7 @@ domainverifier.prototype = {
             /**
              * Could not contain non alphabetical or numeric on start or end of email address
              */
-            || !_mail.match(/^[a-z0-9]/) || _mail.match(/[a-z0-9]$/)
+            || ! _mail.match(/^[a-z0-9]/) || !_mail.match(/[a-z0-9]$/)
         ) {
             return false;
         }

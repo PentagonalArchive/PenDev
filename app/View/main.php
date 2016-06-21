@@ -138,17 +138,19 @@ require 'header.php';
                   <h2 class="text-lite text-center">Be part of our family</h2>
                 </div>
                 <div class="col-md-8 col-md-offset-2 margin-bottom-15">
-                  <div class="input-group">
-                    <input type="email" id="email" name="email" placeholder="email@example.com" class="form-control">
-                    <div class="input-group-btn">
-                      <button type="submit" id="submit-subscribe" class="btn btn-monokai-lite">Subscribe</button>
+                  <div id="form-subscribe-form">
+                    <div class="input-group">
+                      <input type="email" id="email" name="email" placeholder="email@example.com" class="form-control">
+                      <div class="input-group-btn">
+                        <button type="submit" id="submit-subscribe" class="btn btn-monokai-lite">Subscribe</button>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-8 col-md-offset-2 margin-bottom-15">
                   <blockquote class="text-lite text-left">We plan to create a WordPress theme marketplace.
                   <br />
-                  Subscribe to our database and you will have chance to be the one of 10 lifetime VIP members.</blockquote>
+                  Subscribe to our database and you will have chance to be the one of 10+ Free lifetime VIP members.</blockquote>
                 </div>
               </div>
             </div>

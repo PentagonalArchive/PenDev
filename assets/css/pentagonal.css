@@ -12,7 +12,9 @@ body {
     -webkit-user-select: none;
     user-select: none;
 }
-
+.alert {
+    border-radius: 2px;
+}
 /* Cursor
  ---------------------------- */
 .cursor-pointer {
@@ -325,6 +327,8 @@ body {
 .btn-primary.disabled,
 .btn-primary.disabled:hover,
 .btn-primary.disabled:focus {
+    background: none;
+    background-color: transparent;
     color: #122b40;
     border-color: #122b40;
 }
@@ -354,6 +358,8 @@ body {
 .btn-success.disabled,
 .btn-success.disabled:hover,
 .btn-success.disabled:focus {
+    background: none;
+    background-color: transparent;
     color: #398439;
     border-color: #398439;
 }
