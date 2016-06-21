@@ -20,7 +20,7 @@ $base_url = preg_replace('/^http:/i', '', $base_url);
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css">
   <script type="text/javascript">
       document.documentElement.className = document.documentElement.className.replace(/no\-/g, '');
-      var subscribe_url = <?php echo json_encode(rtrim($this->container->request->getUri()->getBaseUrl(), '/').'/subscribe');?>;
+      var subscribe_url = <?php echo json_encode($base_url.'/subscribe');?>;
   </script>
 </head>
 <body>

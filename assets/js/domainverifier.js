@@ -89,7 +89,6 @@ domainverifier.prototype = {
         ) {
             return false;
         }
-        console.log(result.domain);
         if (result.domain == 'example' && result.extension == 'com') {
             return false;
         }
