@@ -4,7 +4,7 @@ if (!isset($this) || !$this instanceof \Slim\Views\PhpRenderer) {
 }
 require 'header.php';
 ?>
-    <div id="405-method-notallowed" class="full-screen relative text-center text-white bg-black">
+    <div id="405-method-notallowed" class="no-select full-screen relative text-center text-white bg-black">
       <div class="absolute-full z-index-0">
         <div class="absolute-full z-index-1"></div>
         <canvas class="node-pointer absolute-full z-index-0"></canvas>

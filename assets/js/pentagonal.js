@@ -16,12 +16,12 @@
 
     //CANVAS
     function constellate(selector, colorUsed, options) {
-        if (!selector || ! selector instanceof jQuery) {
+        if (!selector) {
             return false;
         }
         options = typeof options == 'object' ? options : {};
         colorUsed = typeof colorUsed == 'string' ? colorUsed : 'rgba(255,255,255, .5)';
-        var canvas = selector[0],
+        var canvas = selector,
             ctx = canvas.getContext('2d'),
             color = colorUsed;
 
@@ -41,8 +41,8 @@
         }
         function resetInit() {
             canvas.style.display = 'block';
-            canvas.width = windowWidth();
-            canvas.height = windowHeight();
+            canvas.width = $(selector).parent().width() > 320 ? $(selector).parent().width() : 320;
+            canvas.height = $(selector).parent().height() > 320 ? $(selector).parent().height() :320;
             ctx.fillStyle = color;
             ctx.lineWidth = .1;
             ctx.strokeStyle = color;
@@ -154,17 +154,20 @@
         }
         $(window).on('resize', resetInit);
         $(window).on('mousemove mouseleave', function(e){
-            if(e.type == 'mousemove'){
+            if(e.type == 'mousemove') {
+                var target_on = $(selector);
                 mousePosition.x = e.pageX;
-                mousePosition.y = e.pageY;
+                mousePosition.y = target_on.offset().top > 0 ? (e.pageY - target_on.offset().top) : e.pageY;
             }
         });
         setInterval(createDots, 1000/30);
     }
     /** check ready */
     $(document).ready(function () {
-        // init canvas
-        constellate($('canvas.node-pointer'));
+        $('canvas.node-pointer').each(function() {
+            // init canvas
+            constellate(this);
+        })
         $('a[href^=#]').on('click', function (e) {
             var _href = this.href.replace(/.+\#(.*)/, '$1');
             if (! _href.match(/[^a-z0-9\-\_]/i) && $('#'+ _href).length) {
@@ -229,6 +232,26 @@
                     }, 1000);
                 });
             }, 1000);
+        };
+
+        var selector_service = $('#service-show .size-140-rounded');
+        var target_service = $('#service-target .col-md-12');
+        if (target_service.length == selector_service.length) {
+            selector_service.on('click', function (e) {
+                target_index = selector_service.index(this);
+                if (typeof target_service[target_index] == 'object') {
+                    var target_service_target = $(target_service[target_index]);
+                    target_service_target.removeClass('hide');
+                    $(target_service).not(target_service[target_index]).addClass('hide');
+                    $(this).addClass('active');
+                    selector_service.not(this).removeClass('active');
+                }
+            });
+            if (!selector_service.hasClass('active') || ! target_service.hasClass('hide')) {
+                $(selector_service[0]).click();
+            }
+
         }
+
     }); /** end ready */
 })(window.jQuery);
