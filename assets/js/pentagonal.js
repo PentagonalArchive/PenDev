@@ -250,7 +250,6 @@
             if (!selector_service.hasClass('active') || ! target_service.hasClass('hide')) {
                 $(selector_service[0]).click();
             }
-
         }
 
     }); /** end ready */

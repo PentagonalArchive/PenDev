@@ -62,7 +62,7 @@ require 'header.php';
                   <div class="col-md-9 col-sm-9 no-select margin-bottom-10 margin-top-10">
                     <div class="container-fluid text-center-xs text-center-xxs">
                       <h2 class="info-text-lite">WordPress Themes &amp; Plugins Development</h2>
-                      <p class="text-lite">We provides awesome themes &amp; plugins by our team for your WordPress site.</p>
+                      <h4 class="text-lite">We provides awesome themes &amp; plugins by our team for your WordPress site.</h4>
                     </div>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ require 'header.php';
                   <div class="col-md-9 col-sm-9 no-select margin-bottom-10 margin-top-10">
                     <div class="container-fluid text-center-xs text-center-xxs">
                       <h2 class="info-text-lite">Web ReDesign &amp; Built From Scratch</h2>
-                      <p class="text-lite">Hire us for re-Designing or request from zero for your site with any php source code.</p>
+                      <h4 class="text-lite">Hire us for re-Designing or request from zero for your site with any php source code.</h4>
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ require 'header.php';
                   <div class="col-md-9 col-sm-9 no-select margin-bottom-10 margin-top-10">
                     <div class="container-fluid text-center-xs text-center-xxs">
                       <h2 class="info-text-lite text-center-xs text-center-xxs">Web &amp; Mobile Application Development</h2>
-                      <p class="text-lite">Creating fully functionality web &amp; Mobile application creatively.</p>
+                      <h4 class="text-lite">Creating fully functionality web &amp; Mobile application creatively.</h4>
                     </div>
                   </div>
                 </div>
@@ -116,7 +116,7 @@ require 'header.php';
                   <div class="col-md-9 col-sm-9 no-select margin-bottom-10 margin-top-10">
                     <div class="container-fluid">
                       <h2 class="info-text-lite text-center-xs text-center-xxs">Solutions &amp; Idea For Your Enterprise Business</h2>
-                      <p class="text-lite">Enterprise level consult for online business &amp; give you idea for the futures.</p>
+                      <h4 class="text-lite">Enterprise level consult for online business &amp; give you idea for the futures.</h4>
                     </div>
                   </div>
                 </div>
@@ -133,6 +133,24 @@ require 'header.php';
         <div class="row">
           <div class="col-md-12" id="partner">
             <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 margin-bottom-15">
+                  <h2 class="text-lite text-center">Be part of our family</h2>
+                </div>
+                <div class="col-md-8 col-md-offset-2 margin-bottom-15">
+                  <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="email@example.com" class="form-control">
+                    <div class="input-group-btn">
+                      <button type="submit" id="submit-subscribe" class="btn btn-monokai-lite">Subscribe</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8 col-md-offset-2 margin-bottom-15">
+                  <blockquote class="text-lite text-left">We plan to create a WordPress theme marketplace.
+                  <br />
+                  Subscribe to our database and you will have chance to be the one of 10 lifetime VIP members.</blockquote>
+                </div>
+              </div>
             </div>
           </div>
         </div>
