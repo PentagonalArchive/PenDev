@@ -163,7 +163,7 @@ require 'header.php';
             <div class="copyright margin-top-25 margin-bottom-25">&copy; <?php echo date('Y');?> Pentagonal Development.</div>
           </div>
           <div class="col-md-5 col-sm-5 text-right-md margin-top-10">
-            <div id="icon-social text-center">
+            <div id="icon-social">
               <a class="social-icons img-circle text-white social-facebook" href="https://www.facebook.com/pentagonaldevelopment" target="_blank">
                 <i class="fa fa-facebook"></i>
               </a>
