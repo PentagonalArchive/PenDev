@@ -54,6 +54,17 @@ class App
             || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https'
             || !empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off'
         ) {
+            // detect if non standard protocol
+            if ($_SERVER['SERVER_PORT'] == 80
+                && (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])
+                    || isset($_SERVER['HTTP_FRONT_END_HTTPS'])
+                )
+            ) {
+                // add original standard port
+                $_SERVER['SERVER_PORT_ORIGINAL'] = 80;
+                $_SERVER['SERVER_PORT'] = 443;
+            }
+
             // fixing HTTPS Environment
             $_SERVER['HTTPS'] = 'on';
         }
