@@ -3,7 +3,6 @@ if (!isset($this) || !$this instanceof \Slim\Views\PhpRenderer) {
     return;
 }
 $base_url = rtrim($this->container->request->getUri()->getBaseUrl(), '/');
-$base_url = preg_replace('/^http:/i', '', $base_url);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
