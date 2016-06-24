@@ -167,7 +167,7 @@ require 'header.php';
               <a class="social-icons img-circle text-white social-facebook" href="https://www.facebook.com/pentagonaldevelopment" target="_blank">
                 <i class="fa fa-facebook"></i>
               </a>
-              <a class="social-icons img-circle text-white social-twitter" href="https://twitter.com/pentagonal" target="_blank">
+              <a class="social-icons img-circle text-white social-twitter" href="https://twitter.com/pentagonaldev" target="_blank">
                 <i class="fa fa-twitter"></i>
               </a>
               <a class="social-icons img-circle text-white social-github" href="https://github.com/pentagonal" target="_blank">

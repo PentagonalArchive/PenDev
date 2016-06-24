@@ -23,8 +23,10 @@ class App
      */
     public function __construct()
     {
+        $server_env = $this->fixHTTPSEnvironment();
         $this->slim = new Slim(
             [
+                'environment' => Environment::mock($server_env),
                 'settings' => [
                     'determineRouteBeforeAppMiddleware' => false,
                     'displayErrorDetails' => (defined('ENVIRONMENT') && ENVIRONMENT == 'development'),
@@ -37,6 +39,26 @@ class App
         $this->registerApplication()
             ->registerMiddleWare()
             ->registerRoute();
+    }
+
+    /**
+     * Detecting & Fix Environment on some cases
+     *     Default Environment uses $_SERVER to attach
+     *     just to fix https
+     * @return array
+     */
+    protected function fixHTTPSEnvironment()
+    {
+        if (!empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off'
+            // hide behind proxy / maybe cloudflare cdn
+            || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https'
+            || !empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off'
+        ) {
+            // fixing HTTPS Environment
+            $_SERVER['HTTPS'] = 'on';
+        }
+
+        return $_SERVER;
     }
 
     /**
@@ -70,6 +92,9 @@ class App
     }
 
     /**
+     * Register Additional Middleware to make sure getting better on
+     * mod_rewrite, prevent multiple /duplicate URL
+     *
      * @return $this
      */
     protected function registerMiddleWare()
