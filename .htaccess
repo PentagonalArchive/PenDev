@@ -2,6 +2,7 @@
 # Security Handle
 # ----------------------------------------------------------------------
 
+# Remove this or change htaccess to another redirect rule when non https
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^$
