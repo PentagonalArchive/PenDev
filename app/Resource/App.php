@@ -94,7 +94,7 @@ class App
          */
         $this->slim->getContainer()['view'] = function () {
             $renderer = new PhpRenderer();
-            $renderer->container =& $this->slim->getContainer();
+            $renderer->container = $this->slim->getContainer();
             $renderer->setTemplatePath($renderer->container->get('settings')->get('view_dir'));
             return $renderer;
         };
@@ -143,7 +143,7 @@ class App
             /**
              * @var \Slim\Container
              */
-            $container =& $this->getContainer();
+            $container = $this->getContainer();
             require $container['settings']['data_dir'] . 'Routes.php';
         });
 
