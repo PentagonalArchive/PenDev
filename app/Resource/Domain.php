@@ -1473,7 +1473,7 @@ class Domain
 
         // does not allow naming more than 255 characters
         if ($this->strlen($domainname) > 255) {
-            $domain_cached[$domainname] = false;
+            $this->cached[$domainname] = false;
             return false;
         }
 
@@ -1544,7 +1544,7 @@ class Domain
                     $retval['subdomain_name']
                 ) !== 0
             ) {
-                $domain_cached[$domainname] = false;
+                $this->cached[$domainname] = false;
                 return false;
             }
         }
